@@ -4,8 +4,6 @@ Javascript library to easily delay and chain functions.
 
 ## Installation
 
-> WIP, not published yet
-
 ```bash
 npm i wait.js --save
 ```
@@ -22,22 +20,22 @@ export default class MyClass {
     constructor () {
         this.waitter = new Wait()
     }
-    
+
     wait (milliseconds = 0) {
         this.waitter.handle(() => { /* Your code here */ }, milliseconds)
         return this
     }
-    
+
     foo () {
         this.waitter.handle(() => { /* Your code here */ })
         return this
     }
-    
+
     bar () {
         this.waitter.handle(() => { /* Your code here */ })
         return this
     }
-    
+
 }
 ```
 
