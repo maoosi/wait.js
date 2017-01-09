@@ -1,46 +1,39 @@
 {
-    "name": "wait.js",
-    "description": "Javascript library to easily delay and chain functions.",
-    "homepage": "https://github.com/maoosi/wait.js",
-
-    "main": "dist/wait.js",
-    "module": "dist/wait.module.js",
-    "jsnext:main": "dist/wait.module.js",
-
-    "author": "maoosi <hello@sylvainsimao.fr>",
-
-    "version": "1.0.0",
-    "license": "MIT",
-
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/maoosi/wait.js.git"
-    },
-    "bugs": {
-        "url": "https://github.com/maoosi/wait.js/issues"
-    },
-
-    "keywords": [
-        "wait",
-        "delay",
-        "functions",
-        "methods",
-        "chain",
-        "queue"
-    ],
-
-    "devDependencies": {
-        "babel-plugin-transform-object-rest-spread": "^6.16.0",
-        "babel-preset-es2015-rollup": "^1.2.0",
-        "babel-plugin-transform-regenerator": "6.16.1",
-        "del": "^2.2.2",
-        "gulp": "^3.9.1",
-        "node-notifier": "^4.6.1",
-        "rollup": "^0.36.0",
-        "rollup-plugin-babel": "^2.6.1",
-        "rollup-plugin-commonjs": "^5.0.4",
-        "rollup-plugin-node-resolve": "^2.0.0"
-    },
-
-    "dependencies": {}
+  "name": "wait.js",
+  "description": "Javascript library to easily delay and chain functions.",
+  "homepage": "https://github.com/maoosi/wait.js",
+  "main": "dist/wait.js",
+  "module": "dist/wait.module.js",
+  "jsnext:main": "dist/wait.module.js",
+  "author": "maoosi <hello@sylvainsimao.fr>",
+  "version": "1.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maoosi/wait.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maoosi/wait.js/issues"
+  },
+  "keywords": [
+    "wait",
+    "delay",
+    "functions",
+    "methods",
+    "chain",
+    "queue"
+  ],
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-plugin-transform-regenerator": "6.16.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "node-notifier": "^4.6.1",
+    "rollup": "^0.36.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  },
+  "dependencies": {}
 }
