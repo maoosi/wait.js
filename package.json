@@ -6,7 +6,7 @@
   "module": "dist/wait.module.js",
   "jsnext:main": "dist/wait.module.js",
   "author": "maoosi <hello@sylvainsimao.fr>",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
