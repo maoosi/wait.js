@@ -1,43 +1,61 @@
-export default class Wait {
+class Wait {
 
     constructor () {
     // initiate wait vars
         this.waitQueue = []
-        this.waitTimer = false
         this.waitExecution = false
     }
 
-    handle (func, milliseconds = false) {
+    handle (context, func, milliseconds = false) {
     // handle wait
         this.waitQueue.push({
             'func': func,
-            'timeout': milliseconds
+            'timeout': this._isAsyncFunc(func) ? 'async' : milliseconds
         })
 
-        if (!this.waitExecution) {
-            this.next()
-        }
+        if (!this.waitExecution) this._next()
+
+        return context
     }
 
-    next () {
+    pause (context, milliseconds, func = () => {}) {
+    // handle wait pause
+        return this.handle(context, func, milliseconds)
+    }
+
+    _isAsyncFunc (func) {
+    // does function contains done()?
+        return func.toString().search('done()') > -1
+    }
+
+    _exec (func) {
+    // execute the function
+        func.call(this, (() => { this._next() }))
+    }
+
+    _next () {
     // execute next
         if (this.waitQueue.length > 0) {
+            this.waitExecution = true
+
             let c = this.waitQueue.shift()
             let f = c['func']
             let t = c['timeout']
 
-            if (t !== false) {
-                f()
-                this.waitExecution = true
-                this.waitTimer = setTimeout(() => {
-                    this.next()
-                }, t)
+            if (t === 'async') {
+                this._exec(f)
+            } else if (t !== false) {
+                this._exec(f)
+                setTimeout(() => { this._next() }, t)
             } else {
-                f()
-                this.waitExecution = false
-                this.next()
+                this._exec(f)
+                this._next()
             }
+        } else {
+            this.waitExecution = false
         }
     }
 
 }
+
+export default (...args) => { return new Wait(...args) }

@@ -1,39 +1,53 @@
 {
-  "name": "wait.js",
-  "description": "Javascript library to easily delay and chain functions.",
-  "homepage": "https://github.com/maoosi/wait.js",
-  "main": "dist/wait.js",
-  "module": "dist/wait.module.js",
-  "jsnext:main": "dist/wait.module.js",
-  "author": "maoosi <hello@sylvainsimao.fr>",
-  "version": "2.0.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/maoosi/wait.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/maoosi/wait.js/issues"
-  },
-  "keywords": [
-    "wait",
-    "delay",
-    "functions",
-    "methods",
-    "chain",
-    "queue"
-  ],
-  "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
-    "babel-preset-es2015-rollup": "^1.2.0",
-    "babel-plugin-transform-regenerator": "6.16.1",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "node-notifier": "^4.6.1",
-    "rollup": "^0.36.0",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-plugin-commonjs": "^5.0.4",
-    "rollup-plugin-node-resolve": "^2.0.0"
-  },
-  "dependencies": {}
+    "name": "wait.js",
+    "description": "JavaScript library to easily delay and chain class functions.",
+    "homepage": "https://github.com/maoosi/wait.js#readme",
+    "main": "dist/wait.js",
+    "module": "dist/wait.mjs",
+    "jsnext:main": "dist/wait.mjs",
+    "author": "maoosi <hello@sylvainsimao.fr>",
+    "version": "3.0.0",
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "eslint src test",
+        "build": "rollup -c",
+        "watch": "rollup -c -w",
+        "pretest": "npm run build",
+        "test": "mocha",
+        "prepublish": "npm test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/maoosi/wait.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maoosi/wait.js/issues"
+    },
+    "keywords": [
+        "wait",
+        "delay",
+        "functions",
+        "methods",
+        "chain",
+        "queue"
+    ],
+    "devDependencies": {
+        "babel-core": "^6.24.1",
+        "babel-eslint": "^7.2.1",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-plugin-transform-object-rest-spread": "^6.20.2",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-register": "^6.24.1",
+        "babelrc-rollup": "^3.0.0",
+        "eslint": "^3.19.0",
+        "jsdom": "9.12.0",
+        "jsdom-global": "2.1.1",
+        "mocha": "^3.2.0",
+        "rollup": "^0.41.6",
+        "rollup-plugin-babel": "^2.7.1",
+        "rollup-plugin-uglify": "^1.0.1",
+        "rollup-watch": "^3.2.2",
+        "uglify-js-harmony": "^2.7.5"
+    },
+    "dependencies": {}
 }
