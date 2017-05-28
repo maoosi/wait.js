@@ -52,7 +52,7 @@ c.foo().wait(2000).bar().foo()
 
 ## Async functions
 
-Wait.js also provides the ability to deal with async functions, by manually triggering the following execution:
+**Wait.js** also provides the ability to deal with async functions, by manually triggering the next execution:
 
 ```javascript
 import Wait from 'wait.js'
